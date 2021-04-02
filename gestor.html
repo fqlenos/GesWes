@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="img/logo/iconosolo.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Gestor</title>
+    <meta name="author" content="Pedro del Pino & Iñaki Ruiz">
+    <meta name="description" content="Gestor de ficheros">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <li class="nav-left">Gestor</li>
+            <li class="nav-center"><a href="index.html">Del Pino Gómez + Ruiz Manzanos</a></li>
+            <li class="nav-right">
+                <a href="index.html"><img src="img/logo/logo.png" alt="GesWes"></a>
+            </li>
+        </ul>
+    </nav>
+    <div class="container row row-top5">
+        <div class="col col-9">
+            <ul class="bread">
+                <li><a id="reset" title="Vacía todos los campos del formulario" href="#">Vaciar formulario</a></li>
+                <li><a id="empty" title="Vacía la memoria del navegador" href="#">Eliminar ficheros</a></li>
+                <!--<li><a id="edit" title="Se activa la opción para editar los ficheros" href="#">Editar ficheros</a></li>-->
+            </ul>
+
+            <form class="form" id="form">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" value="" placeholder="Nombre del archivo" required>
+                <label for="description">Resumen</label>
+                <textarea rows="8" name="description" id="description" placeholder="Escribe el resumen del texto" required></textarea>
+                <label for="no-encrypt">Sin encriptar</label>
+                <input type="radio" name="select-encrypt" id="no-encrypt" value="no-encrypt" checked="">
+                <label for="encrypt">Encriptar</label>
+                <input type="radio" name="select-encrypt" id="encrypt" value="encrypt">
+                <input id="password" type="hidden" name="password" value="">
+                <button id="save" name="save" title="Almacena el texto en memoria del navegador">Almacenar texto</button>
+            </form>
+        </div>
+        <div class="col col-3">
+            <div id="navigator">
+            </div>
+        </div>
+    </div>
+    <div id="footer" class="footer footer-fixed">
+        <span>Creado por <a href="mailto:delpino127445@e.unavarra.es">Pedro del Pino Gómez</a> &amp; <a href="mailto:ruiz.117069@e.unavarra.es">Iñaki Ruiz Manzanos</a> para Servicios Web: Cliente - 2021 &copy;</span>
+    </div>
+    <script src="js/main.js" async defer></script>
+    <script src="js/buttons.js" async defer></script>
+    <script src="js/encryption.js" async defer></script>
+</body>
+
+</html>

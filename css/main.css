@@ -1,0 +1,626 @@
+    /* en general */
+    
+    html {
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        margin: 0;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 18px;
+    }
+    
+    textarea,
+    input,
+    select {
+        font-family: inherit;
+        font-size: 0.875em;
+    }
+    
+    button {
+        border-radius: 0.7em;
+    }
+    
+    p {
+        hyphens: auto;
+    }
+    
+    a {
+        color: black;
+    }
+    
+    a:hover {
+        opacity: 0.7;
+    }
+    
+    .container {
+        padding: 5px;
+        overflow: hidden;
+        height: 100%;
+        position: relative;
+    }
+    
+    .container p.resumen {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 50%;
+        /* 50% porque pide mostrar solo unas pocas palabras */
+        white-space: nowrap;
+    }
+    
+    .inline {
+        display: flex;
+        align-items: center;
+    }
+    
+    .error {
+        margin: 0;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 60%;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .bold {
+        font-size: 19px;
+        font-weight: bold;
+    }
+    /* barra superior */
+    
+    nav {
+        position: fixed;
+        overflow: hidden;
+        top: 0;
+        width: 100%;
+        padding: 1em 0;
+        text-transform: uppercase;
+        background-color: #333;
+        z-index: 99;
+    }
+    
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    nav ul li {
+        height: 1em;
+        line-height: 1em;
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    nav ul li a {
+        font-weight: bold;
+        color: #eee;
+        text-decoration: none;
+    }
+    
+    li.nav-center a {
+        text-align: center;
+        text-transform: uppercase;
+        display: block;
+        float: none;
+        position: absolute;
+        padding: 14px 16px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgb(91, 148, 235);
+        color: white;
+        border-radius: 0.7em;
+        cursor: pointer;
+    }
+    
+    li.nav-right {
+        float: right;
+        padding: 0.2em;
+    }
+    
+    li.nav-right img {
+        height: 2em;
+        padding-right: 1em;
+    }
+    /* Jumbotron  */
+    
+    .jumbotron {
+        background-color: #555;
+        margin-top: 4em;
+        padding-top: 8em;
+        width: 100%;
+        height: 90vh;
+        text-align: center;
+        position: relative;
+    }
+    
+    .jumbotron::before {
+        content: ' ';
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        background-image: url(../img/back.png);
+        background-position: 50% 0;
+        position: absolute;
+        z-index: 1;
+    }
+    
+    .jumbotron h1.title {
+        color: white;
+        margin: 0;
+        padding: 15px;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .jumbotron p {
+        margin-top: 2em;
+        margin-bottom: 5em;
+        color: #cccc;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .jumbotron p.subtitle {
+        color: white;
+        font-style: italic;
+        font-size: larger;
+        margin-top: 0;
+        margin-bottom: 4em;
+    }
+    
+    .jumbotron p.lead {
+        color: white;
+        font-style: italic;
+    }
+    
+    hr {
+        color: #ccc;
+        width: 70vw;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .jumbotron .button {
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        background-color: rgb(91, 148, 235);
+        color: white;
+        padding: 14px 20px;
+        border-radius: 0.7em;
+        cursor: pointer;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        hyphens: auto;
+        z-index: 2;
+    }
+    
+    .jumbotron a:hover {
+        opacity: 0.7;
+    }
+    /* columnas principales */
+    
+    .index {
+        padding-top: 4em;
+        min-height: 80vh;
+    }
+    
+    .col {
+        padding: 0.5em;
+        overflow: auto;
+        text-justify: inter-word;
+    }
+    
+    .col-333 {
+        margin: 1em;
+        padding: 1.2em;
+        flex-direction: column;
+        width: 33%;
+        border: 1px solid;
+        border-radius: 0.7em;
+        display: flex;
+    }
+    
+    .col-333 .button {
+        text-align: center;
+        text-decoration: none;
+        background-color: #666;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 0.7em;
+        cursor: pointer;
+        text-transform: uppercase;
+        width: 37%;
+        display: block;
+        /* para centrar en el div margin: 0 auto */
+        margin: 0 auto;
+    }
+    
+    .col-333 span.logo {
+        color: rgb(91, 148, 235);
+        font-weight: bold;
+    }
+    
+    .col-333 p.info {
+        text-align: justify;
+    }
+    
+    .col-333 ol {
+        list-style-type: decimal;
+    }
+    
+    .col-333 ol li {
+        font-style: italic;
+        padding: 0.5em 0em;
+        text-decoration: none;
+    }
+    
+    .card-profile {
+        display: block;
+        margin: auto;
+        text-align: right;
+    }
+    
+    .hr-profile {
+        width: 70%;
+    }
+    
+    .card-profile img {
+        float: left;
+        height: 8.5em;
+        margin: 0.5em;
+    }
+    
+    .card-profile li {
+        list-style-type: none;
+    }
+    
+    .card-profile li img {
+        height: 2.4em;
+        float: right;
+        margin: 0;
+        border: none;
+    }
+    
+    .card-profile p.title {
+        color: #555;
+        margin: 0;
+    }
+    
+    .row {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .row-top5 {
+        padding-top: 5em;
+    }
+    
+    .col-9 {
+        display: flex;
+        flex-direction: column;
+        width: 60%;
+    }
+    
+    .col-3 {
+        display: flex;
+        flex-direction: column;
+        width: 40%;
+        max-height: 77vh;
+        /* coge el 77% del viewport heigh */
+    }
+    /* right column */
+    
+    .card {
+        margin: 5px;
+        border: 1.2px solid #333;
+        padding: 5px;
+        border-radius: 0.7em;
+    }
+    
+    .card p {
+        text-align: justify;
+        word-wrap: break-word;
+    }
+    
+    .col .card h4 {
+        margin: 0;
+        text-align: justify;
+        text-justify: inter-word;
+        word-wrap: break-word;
+    }
+    
+    .inline-card {
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .inline-card-item {
+        width: 100%;
+    }
+    
+    .inline-card form {
+        width: 100%;
+        margin-right: 10px;
+    }
+    
+    .inline-card input[type=password] {
+        margin-right: 10px;
+        width: 100%;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    .inline-card button {
+        background-color: rgb(91, 148, 235);
+        color: white;
+        padding: 14px 20px;
+        margin: 10px 2px;
+        border: none;
+        cursor: pointer;
+        width: 50%;
+        float: right;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .desencriptar {
+        background-color: rgb(235, 161, 91) !important;
+    }
+    
+    .inline-card button[type=cancel] {
+        background-color: rgb(235, 91, 91);
+    }
+    /* botones sobre formulario */
+    
+    ul.bread {
+        padding: 10px 10px;
+        list-style: none;
+        background-color: #666;
+        width: 70%;
+        border-radius: 0.7em;
+    }
+    
+    ul.bread li {
+        display: inline;
+    }
+    
+    ul.bread li+li:before {
+        padding: 0.3em;
+        color: white;
+        content: "/\00a0";
+    }
+    
+    ul.bread li a {
+        color: white;
+        text-align: center;
+        padding: 10px 10px;
+        text-decoration: none;
+    }
+    
+    ul.bread li a:hover {
+        opacity: 0.5;
+    }
+    /* formulario */
+    
+    .form {
+        padding: 15px;
+        margin-bottom: 4em;
+    }
+    
+    .form input,
+    button,
+    textarea {
+        display: block;
+    }
+    
+    input[type=text],
+    input[type=password] {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    textarea {
+        width: 70%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    
+    input[type=radio] {
+        display: inline;
+        padding: 12px 20px;
+        margin: 10px 6px;
+    }
+    
+    button[name=save] {
+        background-color: rgb(91, 148, 235);
+        color: white;
+        width: 70%;
+        padding: 14px 20px;
+        margin: 10px 0;
+        border: none;
+        cursor: pointer;
+        text-transform: uppercase;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    button:hover {
+        opacity: 0.8;
+    }
+    /* Conocenos */
+    
+    .col-6 {
+        margin: 6em 1.5em 1.5em 1.5em;
+        padding: 1.5em;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        background-color: rgb(228, 228, 228);
+        border-radius: 0.7em;
+    }
+    
+    .card-conocenos {
+        padding: 0.5em;
+        width: 100%;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .card-conocenos .box {
+        vertical-align: top;
+        display: inline-block;
+        text-align: center;
+        margin-right: 1em;
+    }
+    
+    .card-conocenos .box li {
+        display: block;
+        align-items: center;
+        display: table-cell;
+        padding-left: 1em;
+    }
+    
+    .card-conocenos li img {
+        height: 2.4em;
+        float: right;
+        margin: 5px auto;
+        border: none;
+    }
+    
+    .card-conocenos img {
+        height: 8.5em;
+        margin: 1em 1em 0.5em 1em;
+    }
+    
+    .card-conocenos .title {
+        color: #555;
+    }
+    
+    .card-conocenos .map {
+        height: 1.5em;
+        margin: 0.3em;
+    }
+    
+    .card-conocenos hr {
+        margin-top: 1.5em;
+        width: 60%;
+    }
+    /* Footer */
+    
+    div.footer {
+        width: 100%;
+        height: 3em;
+        line-height: 3em;
+        text-align: center;
+        color: white;
+        background-color: #333;
+        bottom: 0;
+        /*font-family: fantasy;*/
+    }
+    
+    .footer a {
+        color: #ccc;
+        text-decoration: none;
+    }
+    
+    .footer a:hover {
+        opacity: 0.7;
+    }
+    
+    div.footer-fixed {
+        position: fixed;
+    }
+    /* Extra: version móvil */
+    
+    @media only screen and (max-width: 991px) {
+        nav {
+            min-height: 2em;
+        }
+        .nav-right,
+        .nav-left {
+            display: none;
+        }
+        .nav-center {
+            width: 100% !important;
+        }
+        .jumbotron {
+            padding-top: 3.5em;
+        }
+        .jumbotron p.subtitle {
+            width: 85vw;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .jumbotron p.lead {
+            width: 80vw;
+            margin: 3em auto;
+        }
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+        .col-333 {
+            width: 80%;
+            margin: 10px auto;
+        }
+        .col-333 .button {
+            width: auto;
+        }
+        ul.bread {
+            width: 90%;
+            margin: 10px auto;
+        }
+        .col-9,
+        .col-3 {
+            width: 95%;
+            margin: 1em auto;
+        }
+        .col-6 {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        input[type=text],
+        input[name=password],
+        textarea,
+        input[type=radio],
+        button[name=save] {
+            width: 100% !important;
+        }
+        .inline-card {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+        }
+        .inline-card input[type=password] {
+            width: 95%;
+            margin: 0 0.5em 0 0.5em;
+        }
+        div.footer {
+            height: auto;
+            word-wrap: break-word;
+            hyphens: auto;
+        }
+        div.footer-fixed {
+            position: static;
+        }
+    }
